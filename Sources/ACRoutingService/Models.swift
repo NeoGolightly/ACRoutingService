@@ -10,13 +10,15 @@ import CoreLocation
 
 public struct Route: Identifiable {
   public let id: String
+  public let name: String?
   public let distance: Double
   public let estimatedTime: Double
   public let waypoints: [Coordinate]
   public let steps: [Step]
   
-  internal init(id: String = UUID().uuidString, distance: Double, estimatedTime: Double, waypoints: [Coordinate], steps: [Step]) {
+  internal init(id: String = UUID().uuidString, name: String?, distance: Double, estimatedTime: Double, waypoints: [Coordinate], steps: [Step]) {
     self.id = id
+    self.name = name
     self.distance = distance
     self.estimatedTime = estimatedTime
     self.waypoints = waypoints
