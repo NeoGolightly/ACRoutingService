@@ -30,7 +30,7 @@ final public class ACRoutingService{
     let distance = calculateDistance(from: allSegmentCoordinates)
     let estimatedTime = calculateEstimatedTime(from: distance)
     let steps = createSteps(from: segments)
-    return Route(distance: distance, estimatedTime: estimatedTime, waypoints: allSegmentCoordinates, steps: steps)
+    return Route(name: nil, distance: distance, estimatedTime: estimatedTime, waypoints: allSegmentCoordinates, steps: steps)
   }
   
   private static func calculateDistance(from coordinates: [Coordinate]) -> Double {
