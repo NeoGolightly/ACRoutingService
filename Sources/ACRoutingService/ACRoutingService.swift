@@ -8,7 +8,7 @@ import NeoGeoLibrary
 import Algorithms
 
 
-extension Coordinate {
+public extension Coordinate {
   func toCLLocationCoordinate2D() -> CLLocationCoordinate2D {
     CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
   }
@@ -19,9 +19,9 @@ extension Coordinate {
 }
 
 
-class ACRoutingService{
+final public class ACRoutingService{
   
-  static func createRoute(from segments: [RouteSegment]) -> Route{
+  public static func createRoute(from segments: [RouteSegment]) -> Route{
     checkForSegmentIntegrity(segments: segments)
     let allSegmentCoordinates = segments
       .flatMap { segment in
